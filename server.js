@@ -17,6 +17,7 @@ app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
 });
 
+app.get('/profiles/:id', controllers.profiles.getById)
 app.get('/profiles', controllers.profiles.get)
 
 
