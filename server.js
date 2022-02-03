@@ -17,11 +17,20 @@ app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
 });
 
+<<<<<<< HEAD
 app.get('/profiles/:id', controllers.profiles.getById)
 app.get('/profiles', controllers.profiles.get)
 app.post('/proposal', controllers.profiles.createProposal)
 app.patch('/proposal', controllers.profiles.updateProposal)
 app.patch('/skill', controllers.profiles.updateSkill)
+=======
+
+app.get('/profiles', controllers.profiles.get);
+app.post('/create',controllers.profiles.post);
+app.put('/update',controllers.profiles.put);
+app.put('/delete', controllers.profiles.delete)
+
+>>>>>>> 74286cfcd8811525e58c8fc5c8b131e77aca2288
 
 
 

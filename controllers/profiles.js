@@ -25,4 +25,27 @@ module.exports = {
     console.log('update skill controller', req.body.skill)
     res.send('hi');
   },
+
+  },
+
+  post: async (req, res) => {
+    const {id, email} = req.body;
+
+    model.post({id, email}).then(result => {
+      if(result) res.status(201).send()
+    })
+  },
+
+  put: async (req, res) => {
+    const {id, email, info} = req.body;
+    model.put({id, email, info}).then(result => {
+      if(result) res.status(204).send()
+    })
+  },
+  delete: async (req, res) => {
+    const {id} = req.body;
+    model.delete(id).then(result => {
+      if(result) res.status(204).send()
+    })
+  }
 }
