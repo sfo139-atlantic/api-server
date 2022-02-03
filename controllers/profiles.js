@@ -8,5 +8,21 @@ module.exports = {
     const profiles = await model.getById(req.params.id);
     console.log(profiles[0].proposals)
     res.send(profiles);
-  }
+  },
+  createProposal: async (req, res) => {
+    const proposal = await model.createProposal(req.body.proposal);
+    console.log('create Proposal controller', req.body.proposal)
+    res.send('hi');
+  },
+  updateProposal: async (req, res) => {
+
+    const proposal = await model.updateProposal(req.body.proposal);
+    console.log('update Proposal controller', req.body.proposal)
+    res.send('hi');
+  },
+  updateSkill: async (req, res) => {
+    const skill = await model.updateSkill(req.body.skill);
+    console.log('update skill controller', req.body.skill)
+    res.send('hi');
+  },
 }

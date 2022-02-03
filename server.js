@@ -19,6 +19,9 @@ app.listen(PORT, () => {
 
 app.get('/profiles/:id', controllers.profiles.getById)
 app.get('/profiles', controllers.profiles.get)
+app.post('/proposal', controllers.profiles.createProposal)
+app.patch('/proposal', controllers.profiles.updateProposal)
+app.patch('/skill', controllers.profiles.updateSkill)
 
 
 
