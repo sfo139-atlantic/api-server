@@ -10,9 +10,9 @@ module.exports = {
   },
   post: async (req, res) => {
     const {_id, email} = req.body;
-    console.log(_id)
+
     model.post({_id, email}).then(result => {
-      if(result) res.status(201).send()
+      if(result) res.status(201).send();
     })
   },
   put: async (req, res) => {

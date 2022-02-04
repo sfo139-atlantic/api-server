@@ -32,13 +32,13 @@ module.exports = {
     const location = '';
     const portfolio = [];
     const proposals = [];
-    const profile_pic ='';
+    const profile_pic ='https://www.pngkey.com/png/detail/115-1150152_default-profile-picture-avatar-png-green.png';
     const timezones = [];
     try {
-      const result = await db.profiles.findOneAndUpdate({_id, email}, {$set:{_id, email,firstName, lastName, freelancer, rate, work_history, skills, education, location, portfolio, proposals, profile_pic, timezones}}, {upsert: true});
+      const result = await db.profiles.insertOne({_id, email, firstName, lastName, freelancer, rate, work_history, skills, education, location, portfolio, proposals, profile_pic, timezones});
       return true
     } catch(e) {
-      throw e;
+      throw e
     }
   },
   put: async ({_id, info}) => {
