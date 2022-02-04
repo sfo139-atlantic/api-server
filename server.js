@@ -13,11 +13,17 @@ app.listen(PORT, () => {
 });
 
 //Get Profiles and Profile information
+app.get('/profiles/:id', controllers.profiles.getById)
+
 app.get('/profiles', controllers.profiles.get);
 app.get('/profiles/findOne', controllers.profiles.getOne);
 app.post('/create',controllers.profiles.post);
 app.put('/update',controllers.profiles.put);
 app.put('/delete', controllers.profiles.delete)
+
+app.post('/proposal', controllers.profiles.createProposal)
+app.patch('/proposal', controllers.profiles.updateProposal)
+app.patch('/skill', controllers.profiles.updateSkill)
 
 
 //Get messages and message info

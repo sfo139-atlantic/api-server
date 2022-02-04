@@ -26,5 +26,22 @@ module.exports = {
     model.delete(_id).then(result => {
       if(result) res.status(204).send()
     })
-  }
+  },
+  getById: async (req, res) => {
+    const profiles = await model.getById(req.params.id);
+    console.log(profiles[0].proposals)
+    res.send(profiles);
+  },
+  createProposal: async (req, res) => {
+    const proposal = await model.createProposal(req.body.proposal);
+    res.status(201).send()
+  },
+  updateProposal: async (req, res) => {
+    const proposal = await model.updateProposal(req.body.proposal);
+    res.status(201).send()
+  },
+  updateSkill: async (req, res) => {
+    const skill = await model.updateSkill(req.body.skill);
+    res.status(201).send()
+  },
 }
